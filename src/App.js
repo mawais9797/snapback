@@ -3,8 +3,9 @@ import { Routes, Route } from "react-router-dom";
 
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
-import Signup from "./components/Signup";
-import SignupMUI from "./components/mui";
+import SignupMUI from "./screens/SignupMUI";
+import SignupSaving from "./components/saving";
+import Login from "./screens/Login";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -21,6 +22,7 @@ function App() {
             <Routes>
               {/* <Route path="/" element={<Signup />} /> */}
               <Route path="/" element={<SignupMUI />} />
+              <Route path="/login" element={<Login />} />
             </Routes>
           </main>
         </div>

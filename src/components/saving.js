@@ -13,7 +13,7 @@ import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
 import { Link } from "react-router-dom";
 
-const SignupMUI = () => {
+const SignupSaving = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -234,4 +234,4 @@ const SignupMUI = () => {
   );
 };
 
-export default SignupMUI;
+export default SignupSaving;
