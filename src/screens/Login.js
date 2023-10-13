@@ -3,10 +3,11 @@ import {
   Box,
   Button,
   Checkbox,
+  Container,
   InputLabel,
   TextField,
   Typography,
-  useTheme,
+  ButtonBase,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import VisibilityIcon from "@mui/icons-material/Visibility";
@@ -18,10 +19,12 @@ import { tokens } from "../theme";
 import CustomButton from "../components/CustomButton";
 import CustomCheckbox from "../components/CustomCheckbox";
 import googleImage from "../images/google-icon.png";
+import facebookImage from "../images/facebook-icon.png";
+import twitterxImage from "../images/twitterX-icon-white.png";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    margin: "70px 0px 0px 430px",
+    margin: "70px 0px 0px 0px",
     width: "400px",
   },
   header: {
@@ -79,18 +82,27 @@ const useStyles = makeStyles((theme) => ({
     height: "50px",
     borderRadius: "5px",
     marginTop: "15px",
+    display: "flex",
   },
   socialMediaImage: {
     width: "25px",
     height: "25px",
   },
   socialMediaImageSpan: {
-    marginTop: "20px",
-    marginLeft: "90px",
+    marginTop: "10px",
+    marginLeft: "120px",
     marginRight: "8px",
   },
   socialMediaButtonText: {
-    marginTop: "-5px",
+    marginTop: "15px",
+  },
+  socialMediaButtonLink: {
+    textDecoration: "none",
+    "&:hover": {
+      backgroundColor: "#998ee1",
+      opacity: "0.7",
+    },
+    color: "#fff",
   },
 }));
 
@@ -136,84 +148,125 @@ const Login = () => {
 
   return (
     <>
-      <Box className={classes.container}>
-        <Box className={classes.header}>
-          <Typography variant="h2" className={classes.title}>
-            Log in
-          </Typography>
-          <Typography variant="subtitle1" className={classes.subtitle}>
-            Enter your details to continue
-          </Typography>
-        </Box>
-        <form>
-          <InputLabel htmlFor="email" className={classes.inputLabel}>
-            Email
-          </InputLabel>
-          <TextField
-            variant="outlined"
-            type="email"
-            fullWidth
-            margin="normal"
-            id="email"
-            placeholder="Enter your email"
-            InputProps={{
-              className: classes.textField,
-            }}
-          />
-          <InputLabel htmlFor="password" className={classes.inputLabel}>
-            Password
-          </InputLabel>
-          <TextField
-            variant="outlined"
-            type={showPassword ? "text" : "password"}
-            fullWidth
-            margin="normal"
-            id="password"
-            placeholder="Enter your password"
-            InputProps={{
-              className: classes.textField,
-              endAdornment: (
-                <Button
-                  onClick={togglePasswordVisibility}
-                  style={{ minWidth: "auto" }}
-                >
-                  {showPassword ? (
-                    <VisibilityOutlinedIcon style={{ color: "#2e3a48" }} />
-                  ) : (
-                    <VisibilityOffOutlinedIcon style={{ color: "#2e3a48" }} />
-                  )}
-                </Button>
-              ),
-            }}
-          />{" "}
-          {/* ... */}
-          <CustomCheckbox style={customCheckboxStyle} />
-          <span className={classes.rememberMe}>Remember me</span>{" "}
-          <Link className={classes.recoverPassword}>Recover password</Link>
-          <CustomButton title="Sign In" />
-          <Box className={classes.socialMediaButton}>
-            <span className={classes.socialMediaImageSpan}>
-              <img
-                src={googleImage}
-                className={classes.socialMediaImage}
-                alt="Google"
-              />
-            </span>
-            <span className={classes.socialMediaButtonText}>
-              {" "}
-              Continue with Google
-            </span>
+      <Container maxWidth="xs">
+        <Box className={classes.container}>
+          <Box className={classes.header}>
+            <Typography variant="h2" className={classes.title}>
+              Log in
+            </Typography>
+            <Typography variant="subtitle1" className={classes.subtitle}>
+              Enter your details to continue
+            </Typography>
           </Box>
-          <br />
-          <br />
-          <p className={classes.registerLinkText}>
-            I don't have an account.{" "}
-            <Link to="#" className={classes.registerLink}>
-              Register
+          <form>
+            <InputLabel htmlFor="email" className={classes.inputLabel}>
+              Email
+            </InputLabel>
+            <TextField
+              variant="outlined"
+              type="email"
+              fullWidth
+              margin="normal"
+              id="email"
+              placeholder="Enter your email"
+              InputProps={{
+                className: classes.textField,
+              }}
+            />
+            <InputLabel htmlFor="password" className={classes.inputLabel}>
+              Password
+            </InputLabel>
+            <TextField
+              variant="outlined"
+              type={showPassword ? "text" : "password"}
+              fullWidth
+              margin="normal"
+              id="password"
+              placeholder="Enter your password"
+              InputProps={{
+                className: classes.textField,
+                endAdornment: (
+                  <Button
+                    onClick={togglePasswordVisibility}
+                    style={{ minWidth: "auto" }}
+                  >
+                    {showPassword ? (
+                      <VisibilityOutlinedIcon style={{ color: "#2e3a48" }} />
+                    ) : (
+                      <VisibilityOffOutlinedIcon style={{ color: "#2e3a48" }} />
+                    )}
+                  </Button>
+                ),
+              }}
+            />{" "}
+            {/* ... */}
+            <CustomCheckbox style={customCheckboxStyle} />
+            <span className={classes.rememberMe}>Remember me</span>{" "}
+            <Link className={classes.recoverPassword}>Recover password</Link>
+            <CustomButton title="Sign In" />
+            <Link className={classes.socialMediaButtonLink}>
+              {/* <ButtonBase
+              component={Link}
+              to="#"
+              className={classes.socialMediaButtonLink}
+              fullWidth
+              TouchRippleProps={{ center: true }} // Add the TouchRippleProps for the ripple effect
+            > */}
+              <Box className={classes.socialMediaButton}>
+                <span className={classes.socialMediaImageSpan}>
+                  <img
+                    src={googleImage}
+                    className={classes.socialMediaImage}
+                    alt="Google"
+                  />
+                </span>
+                <span className={classes.socialMediaButtonText}>
+                  {" "}
+                  Continue with Google
+                </span>
+              </Box>
+              {/* </ButtonBase> */}
             </Link>
-          </p>
-        </form>
-      </Box>
+            <Link className={classes.socialMediaButtonLink}>
+              <Box className={classes.socialMediaButton}>
+                <span className={classes.socialMediaImageSpan}>
+                  <img
+                    src={facebookImage}
+                    className={classes.socialMediaImage}
+                    alt="Facebook"
+                  />
+                </span>
+                <span className={classes.socialMediaButtonText}>
+                  {" "}
+                  Continue with Facebook
+                </span>
+              </Box>
+            </Link>
+            <Link className={classes.socialMediaButtonLink}>
+              <Box className={classes.socialMediaButton}>
+                <span className={classes.socialMediaImageSpan}>
+                  <img
+                    src={twitterxImage}
+                    className={classes.socialMediaImage}
+                    alt="Google"
+                  />
+                </span>
+                <span className={classes.socialMediaButtonText}>
+                  {" "}
+                  Continue with X
+                </span>
+              </Box>
+            </Link>
+            <br />
+            <p className={classes.registerLinkText}>
+              I don't have an account.{" "}
+              <Link to="#" className={classes.registerLink}>
+                Register
+              </Link>
+            </p>
+          </form>
+        </Box>
+      </Container>
     </>
   );
 };

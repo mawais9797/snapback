@@ -6,6 +6,12 @@ import { ColorModeContext, useMode } from "./theme";
 import SignupMUI from "./screens/SignupMUI";
 import SignupSaving from "./components/saving";
 import Login from "./screens/Login";
+import TermsConditions from "./screens/TermsConditions";
+import ResetPassword from "./screens/ResetPassword";
+import ContactNo from "./screens/ContactNo";
+import NumberInput from "./screens/test";
+import CheckEmail from "./screens/CheckEmail";
+import NewPassword from "./screens/NewPassword";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -23,6 +29,12 @@ function App() {
               {/* <Route path="/" element={<Signup />} /> */}
               <Route path="/" element={<SignupMUI />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/termsandcondtions" element={<TermsConditions />} />
+              <Route path="/reset" element={<ResetPassword />} />
+              <Route path="/contactno" element={<ContactNo />} />
+              <Route path="/test" element={<NumberInput />} />
+              <Route path="/checkemail" element={<CheckEmail />} />
+              <Route path="/newpassword" element={<NewPassword />} />
             </Routes>
           </main>
         </div>

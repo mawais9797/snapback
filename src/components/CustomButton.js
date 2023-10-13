@@ -15,7 +15,7 @@ const CustomButton = ({ title }) => {
           fontWeight: "bold",
           color: "#fff",
           "&:hover": {
-            backgroundColor: "#aa9ff2",
+            backgroundColor: "#998ee1",
             opacity: "0.7",
           },
         }}

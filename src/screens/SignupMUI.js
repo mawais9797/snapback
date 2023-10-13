@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   Checkbox,
+  Container,
   InputLabel,
   TextField,
   Typography,
@@ -20,15 +21,15 @@ import CustomCheckbox from "../components/CustomCheckbox";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    margin: "70px 0px 0px 430px",
+    margin: "70px 0px 0px 0px",
     width: "400px",
   },
   header: {
     marginBottom: "30px",
-    paddingLeft: "115px",
+    paddingLeft: "85px",
   },
   title: {
-    paddingLeft: "35px",
+    paddingLeft: "23px",
   },
   subtitle: {
     color: "#596579",
@@ -122,10 +123,10 @@ const SignupMUI = () => {
   };
 
   return (
-    <>
+    <Container maxWidth="xs">
       <Box className={classes.container}>
         <Box className={classes.header}>
-          <Typography variant="h2" className={classes.title}>
+          <Typography variant="h3" className={classes.title}>
             Sign Up
           </Typography>
           <Typography variant="subtitle1" className={classes.subtitle}>
@@ -254,7 +255,7 @@ const SignupMUI = () => {
           </p>
         </form>
       </Box>
-    </>
+    </Container>
   );
 };
 
