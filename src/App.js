@@ -12,6 +12,7 @@ import ContactNo from "./screens/ContactNo";
 import NumberInput from "./screens/test";
 import CheckEmail from "./screens/CheckEmail";
 import NewPassword from "./screens/NewPassword";
+import MobileCode from "./screens/MobileCode";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -35,6 +36,7 @@ function App() {
               <Route path="/test" element={<NumberInput />} />
               <Route path="/checkemail" element={<CheckEmail />} />
               <Route path="/newpassword" element={<NewPassword />} />
+              <Route path="/mobilecode" element={<MobileCode />} />
             </Routes>
           </main>
         </div>
