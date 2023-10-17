@@ -20,7 +20,7 @@ import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDown
 
 const myStyles = makeStyles((theme) => ({
   container: {
-    marginTop: "60px",
+    marginTop: "120px",
   },
   image: {
     width: "25px",
@@ -75,9 +75,9 @@ const myStyles = makeStyles((theme) => ({
 }));
 
 const countries = [
-  { name: "United States", code: "+1" },
-  { name: "United Kingdom", code: "+44" },
-  { name: "Canada", code: "+1" },
+  { name: "US", code: "+1" },
+  { name: "UK", code: "+44" },
+  { name: "CN", code: "+1" },
   // Add more countries as needed
 ];
 
@@ -125,11 +125,11 @@ const ContactNo = () => {
             className={classes.ListButton}
             disableRipple
           >
-            {selectedCountry === "" ? "US" : `Selected: ${selectedCountry}`}
+            {selectedCountry === "" ? "US" : ` ${countryText}`}
             <KeyboardArrowDownOutlinedIcon sx={{ marginLeft: "25px" }} />
           </Button>
           <TextField
-            value={countryText}
+            value={selectedCountry}
             placeholder="+123 (000) 123 456 789"
             sx={{}}
             onChange={(e) => setCountryText(e.target.value)}

@@ -27,7 +27,7 @@ const myStyles = makeStyles((theme) => ({
     height: "70px",
     borderRadius: "40px",
     marginBottom: "20px",
-    marginLeft: "140px",
+    marginLeft: "160px",
   },
   heading: {
     paddingBottom: "20px",

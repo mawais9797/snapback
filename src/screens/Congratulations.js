@@ -9,6 +9,7 @@ import {
 import React from "react";
 import { Link } from "react-router-dom";
 import openEnvelop from "../images/open-envelope-48.png";
+import HandshakeOutlinedIcon from "@mui/icons-material/HandshakeOutlined";
 import { makeStyles } from "@mui/styles";
 import CustomButton from "../components/CustomButton";
 
@@ -22,7 +23,8 @@ const myStyles = makeStyles((theme) => ({
   },
   imageBox: {
     backgroundColor: "#f78b8b",
-    padding: "22px",
+
+    paddingTop: "24px",
     width: "70px",
     height: "70px",
     borderRadius: "40px",
@@ -52,30 +54,31 @@ const myStyles = makeStyles((theme) => ({
   },
 }));
 
-const CheckEmail = () => {
+const Congratulations = () => {
   const classes = myStyles();
   return (
     <Container maxWidth="xs">
       <Box textAlign="center" className={classes.container}>
         <Link to="#">
           <Box className={classes.imageBox}>
-            <img
+            {/* <img
               src={openEnvelop}
               className={classes.image}
               alt="Refresh-Button"
-            />
+            /> */}
+            <HandshakeOutlinedIcon style={{ color: "white" }} />
           </Box>
         </Link>
         <Typography variant="h4" className={classes.heading}>
-          Check your mail
+          Congratulations!
         </Typography>
         <Typography variant="body1" className={classes.body1}>
-          Please click on the link we've sent you by mail to confirm your
-          account
+          Your account has been created successfully. <br />
+          Enjoy the features of the app!
         </Typography>
       </Box>
       <form>
-        <CustomButton title="Reset password" />
+        <CustomButton title="Go to app" />
         <Box textAlign="center">
           <Link to="#" className={classes.backButtonLink}>
             <Typography variant="body1" className={classes.backButton}>
@@ -88,4 +91,4 @@ const CheckEmail = () => {
   );
 };
 
-export default CheckEmail;
+export default Congratulations;

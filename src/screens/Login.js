@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
   header: {
     marginBottom: "30px",
-    paddingLeft: "115px",
+    paddingLeft: "85px",
   },
   title: {
     paddingLeft: "35px",

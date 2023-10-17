@@ -13,6 +13,8 @@ import NumberInput from "./screens/test";
 import CheckEmail from "./screens/CheckEmail";
 import NewPassword from "./screens/NewPassword";
 import MobileCode from "./screens/MobileCode";
+import Congratulations from "./screens/Congratulations";
+import Topbar from "./screens/Topbar";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -25,7 +27,7 @@ function App() {
         <div className="app">
           {/* <Sidebar isSidebar={isSidebar} /> */}
           <main className="content">
-            {/* <Topbar setIsSidebar={setIsSidebar} /> */}
+            <Topbar />
             <Routes>
               {/* <Route path="/" element={<Signup />} /> */}
               <Route path="/" element={<SignupMUI />} />
@@ -37,6 +39,7 @@ function App() {
               <Route path="/checkemail" element={<CheckEmail />} />
               <Route path="/newpassword" element={<NewPassword />} />
               <Route path="/mobilecode" element={<MobileCode />} />
+              <Route path="/congratulations" element={<Congratulations />} />
             </Routes>
           </main>
         </div>

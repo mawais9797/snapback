@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
 import CustomCheckbox from "../components/CustomCheckbox";
@@ -6,7 +6,7 @@ import CustomButton from "../components/CustomButton";
 import { Link } from "react-router-dom";
 const useStyles = makeStyles({
   container: {
-    margin: "90px 0px 0px 430px",
+    margin: "90px 0px 0px 0px",
     width: "400px",
   },
   heading: {
@@ -43,34 +43,40 @@ const TermsConditions = () => {
     },
   };
   return (
-    <Box className={classes.container}>
-      <Typography variant="h4" className={classes.heading}>
-        Terms & Conditions
-      </Typography>
-      <Typography variant="body1" className={classes.body1}>
-        These terms and conditions outline the rules and regulations for the use
-        of Company Name's Website, located at Website.com
-      </Typography>
-      <Typography variant="body1" className={classes.body1}>
-        By Accessing this website we assume you accept these terms and
-        conditions. Do not agree to take all of the terms and conditions stated
-        on this page.
-      </Typography>
-      <CustomCheckbox style={customCheckboxStyle} />{" "}
-      <span className={classes.checkBoxText}>
-        {" "}
-        I agree to Terms and Conditions
-      </span>
-      <br />
-      <CustomCheckbox style={customCheckboxStyle} />{" "}
-      <span className={classes.checkBoxText}>I agree to Privacy Policy</span>
-      <CustomButton title="Continue" />
-      <Link to="#" className={classes.GoBackTextLink}>
-        <Typography variant="body1" className={classes.GoBackText}>
-          Go back
-        </Typography>
-      </Link>
-    </Box>
+    <>
+      <Container maxWidth="xs">
+        <Box className={classes.container}>
+          <Typography variant="h4" className={classes.heading}>
+            Terms & Conditions
+          </Typography>
+          <Typography variant="body1" className={classes.body1}>
+            These terms and conditions outline the rules and regulations for the
+            use of Company Name's Website, located at Website.com
+          </Typography>
+          <Typography variant="body1" className={classes.body1}>
+            By Accessing this website we assume you accept these terms and
+            conditions. Do not agree to take all of the terms and conditions
+            stated on this page.
+          </Typography>
+          <CustomCheckbox style={customCheckboxStyle} />{" "}
+          <span className={classes.checkBoxText}>
+            {" "}
+            I agree to Terms and Conditions
+          </span>
+          <br />
+          <CustomCheckbox style={customCheckboxStyle} />{" "}
+          <span className={classes.checkBoxText}>
+            I agree to Privacy Policy
+          </span>
+          <CustomButton title="Continue" />
+          <Link to="#" className={classes.GoBackTextLink}>
+            <Typography variant="body1" className={classes.GoBackText}>
+              Go back
+            </Typography>
+          </Link>
+        </Box>
+      </Container>
+    </>
   );
 };
 
